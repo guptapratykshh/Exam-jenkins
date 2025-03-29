@@ -4,6 +4,11 @@ pipeline {
         nodejs 'nodejs'
     }
     stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/guptapratykshh/Exam-jenkins'
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
